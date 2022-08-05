@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
-import mapdata from "./mapdata";
+import mapdataReducer from "./mapdata";
 import paletteReducer from "./palette"
 
     const rootReducer = combineReducers({
-        mapdata,
+        mapdataReducer,
         paletteReducer
     });
 

@@ -7,7 +7,10 @@ import { pickTile, showStatus } from '../actions';
 const PaletteContainer = styled.div`
 width: ${32 * 16}px;
 display: grid;
+height: ${32 * 12}px;
 grid-template-columns: repeat(16, 1fr);
+overflow-y: scroll;
+margin: 0 1rem 0 0;
 `;
 
 const PaletteIile = styled.div.attrs(props => ({
@@ -47,7 +50,6 @@ const Palette = () => {
                     </PaletteIile>
                 )
             }
-            <button onClick={()=> dispatch(showStatus({type: 'SHOW'}))}>check</button>
         </PaletteContainer>
     );
 };

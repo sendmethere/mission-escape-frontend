@@ -7,6 +7,7 @@ const INITIAL_STATE = {
 const paletteReducer = (state = INITIAL_STATE, action) => {
     switch(action.type){
         case "PICK":
+            
             var prev = document.getElementsByClassName("ptile")[state.currentBrush];
             var selected = document.getElementsByClassName("ptile")[action.payload.tile];
             prev.classList.remove("selected");
@@ -15,7 +16,7 @@ const paletteReducer = (state = INITIAL_STATE, action) => {
             return {
             ...state,
             prevBrush: state.currentBrush,
-            currentBrush: action.payload.tile
+            currentBrush: action.payload.tile,
         }
         case "SHOW":
             {

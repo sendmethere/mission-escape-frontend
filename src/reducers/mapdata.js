@@ -20,8 +20,23 @@ const INITIAL_STATE = {
     block : [],
     objects : [],
     events : [],
+    isBrushing: false,
 }
 
-export default function mapdata(state = INITIAL_STATE, action) {
-    return state
+const mapdataReducer =  (state = INITIAL_STATE, action) =>  {
+    switch(action.type){
+      case "TILE":
+          var temp = [...state.tiles]
+          temp[action.payload.no].image = action.payload.tile
+          return {...state, tiles:temp, isBrushing:true}
+      case "BRUSH_END":
+              return {
+                  ...state,
+                  isBrushing: false
+              }
+    default:
+        return state
+    }
 }
+
+export default mapdataReducer;
